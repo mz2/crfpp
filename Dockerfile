@@ -3,7 +3,8 @@ LABEL maintainer="Michael Lynch <michael@mtlynch.io>"
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y build-essential
+    apt-get install -y build-essential python2.7 python-pip && \
+    pip install pandas==0.22.0
 
 ADD . /crfpp
 WORKDIR /crfpp
