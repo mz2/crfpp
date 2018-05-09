@@ -8,6 +8,7 @@ RUN apt-get install --yes \
       git \
       python2.7 \
       python-pip
+RUN pip install --upgrade pip
 
 ADD . /crfpp
 WORKDIR /crfpp
