@@ -11,7 +11,6 @@ WORKDIR /crfpp
 RUN ./configure && \
     make && \
     make install && \
-    echo "/usr/local/lib" > /etc/ld.so.conf.d/local.conf && \
     ldconfig
 
 # Clean up.
