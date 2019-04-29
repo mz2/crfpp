@@ -6,9 +6,9 @@ RUN apt-get upgrade --yes
 RUN apt-get install --yes \
       build-essential \
       git \
-      python2.7 \
-      python-pip
-RUN pip install --upgrade pip
+      python3 \
+      python3-pip
+RUN pip3 install --upgrade pip
 
 ADD . /crfpp
 WORKDIR /crfpp
