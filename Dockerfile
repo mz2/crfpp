@@ -1,9 +1,10 @@
 FROM ubuntu:16.04
 LABEL maintainer="Michael Lynch <michael@mtlynch.io>"
 
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
-    apt-get install -y build-essential
+RUN apt-get update --yes
+RUN apt-get upgrade --yes
+RUN apt-get install --yes \
+      build-essential
 
 ADD . /crfpp
 WORKDIR /crfpp
