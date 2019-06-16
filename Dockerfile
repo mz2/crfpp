@@ -19,8 +19,9 @@ RUN pip install Cython==0.29.10
 
 RUN mkdir /libyaml
 WORKDIR /libyaml
+ARG LIBYAML_VERSION="dist-0.2.2"
 RUN git clone https://github.com/yaml/libyaml.git . && \
-    git checkout dist-0.2.2 && \
+    git checkout "$LIBYAML_VERSION" && \
     autoreconf -f -i && \
     ./configure && \
     make && \
@@ -28,8 +29,9 @@ RUN git clone https://github.com/yaml/libyaml.git . && \
 
 RUN mkdir /pyyaml
 WORKDIR /pyyaml
+ARG PYYAML_VERSION="3.13"
 RUN git clone https://github.com/yaml/pyyaml.git . && \
-    git checkout 5.1.1 && \
+    git checkout "$PYYAML_VERSION" && \
     python setup.py install
 
 ADD . /crfpp
