@@ -11,11 +11,11 @@ RUN apt-get install --yes \
       libtool \
       libyaml-dev \
       make \
-      python2.7 \
-      python-dev \
-      python-pip
-RUN pip install --upgrade pip
-RUN pip install Cython==0.29.10
+      python3 \
+      python3-dev \
+      python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install Cython==0.29.10
 
 RUN mkdir /libyaml
 WORKDIR /libyaml
@@ -32,7 +32,7 @@ WORKDIR /pyyaml
 ARG PYYAML_VERSION="3.13"
 RUN git clone https://github.com/yaml/pyyaml.git . && \
     git checkout "$PYYAML_VERSION" && \
-    python setup.py install
+    python3 setup.py install
 
 ADD . /crfpp
 WORKDIR /crfpp
