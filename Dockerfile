@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 LABEL maintainer="Michael Lynch <michael@mtlynch.io>"
 
 RUN apt-get update --yes && \
